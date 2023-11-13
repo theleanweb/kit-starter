@@ -1,22 +1,26 @@
 <script>
-  import Layout from "../../components/layout.html";
+  import Head from "../components/head.html";
 </script>
 
-<svelte:head>
-  <script src="./app.js" type="module" defer></script>
-</svelte:head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Head />
+    <script src="./script.js" type="module" defer></script>
+    <title>The Lean Web Kit</title>
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to <span class="text-gradient">Lean Web Kit</span></h1>
 
-<Layout title="Welcome to Lean Web Kit.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Lean Web Kit</span></h1>
-
-    <div class="counter">
-      <button class="counter__trigger">
-        count is <span class="counter__label">0</span>
-      </button>
-    </div>
-  </main>
-</Layout>
+      <div class="counter">
+        <button class="counter__trigger">
+          count is <span class="counter__label">0</span>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
 
 <style>
   main {
