@@ -1,5 +1,8 @@
 <script>
   import Head from "../components/head.html";
+  import pkg from "../../../package.json";
+
+  console.log(pkg);
 </script>
 
 <!DOCTYPE html>
@@ -10,28 +13,31 @@
     <title>The Lean Web Kit</title>
   </head>
   <body>
-    <main>
-      <h1>Welcome to <span class="text-gradient">Lean Web Kit</span></h1>
+    <div class="container">
+      <section class="hero">
+        <main>
+          <h1>Welcome to <span class="text-gradient">Lean Web Kit</span></h1>
 
-      <div class="counter">
-        <button class="counter__trigger">
-          count is <span class="counter__label">0</span>
-        </button>
-      </div>
-    </main>
+          <div class="counter">
+            <button class="counter__trigger">
+              count is <span class="counter__label">0</span>
+            </button>
+          </div>
+        </main>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <h2 class="card__title">Guides</h2>
+          <h2 class="card__subtitle">Get started with Lean Web Kit</h2>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
 
 <style>
-  main {
-    margin: auto;
-    width: 800px;
-    color: white;
-    padding: 1rem;
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: calc(100% - 2rem);
-  }
+
 
   button {
     color: white;
@@ -55,22 +61,6 @@
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  h1 {
-    line-height: 1;
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-
-  .text-gradient {
-    background-size: 400%;
-    background-position: 0%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: var(--accent-gradient);
-  }
-
   .counter {
     display: flex;
     padding: 1.5rem;
@@ -79,5 +69,49 @@
     background: #23262d;
     justify-content: center;
     border: 1px solid rgba(var(--accent-light), 25%);
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container > * {
+    padding: 1rem;
+  }
+
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .cards {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgb(185, 185, 185);
+  }
+
+  .card > * + * {
+    margin-top: 0.5rem;
+  }
+
+  .card__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .card__subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
   }
 </style>

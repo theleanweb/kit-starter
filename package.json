@@ -17,6 +17,7 @@
     "vite": "^4.4.4"
   },
   "dependencies": {
+    "hono": "^3.11.6",
     "leanweb-kit": "^1.2.0"
   }
 }

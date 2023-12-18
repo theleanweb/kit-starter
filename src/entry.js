@@ -1,4 +1,5 @@
-import { Router, view } from "leanweb-kit/runtime";
+import {Hono as Router} from 'hono'
+import { view } from "leanweb-kit/runtime";
 
 const app = new Router();
 
